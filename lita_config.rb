@@ -9,7 +9,7 @@ Lita.configure do |config|
   config.adapters.slack.token = ENV['SLACK_TOKEN']
 
   config.redis[:url] = ENV["REDISTOGO_URL"]
-  config.http.port = 1234 # ENV["PORT"]
+  config.http.port = ENV["PORT"] || 3000
 
   config.handlers.google_images.google_cse_id = ENV['CSE_ID']
   config.handlers.google_images.google_cse_key = ENV['GOOGLE_API_KEY']
