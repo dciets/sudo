@@ -1,7 +1,9 @@
+require_relative 'common'
+
 Lita.configure do |config|
   config.robot.name = "sudo"
 
-  config.robot.log_level = :info
+  config.robot.log_level = :debug
 
   config.robot.admins = [ENV['SLACK_ADMIN_ID']]
 
