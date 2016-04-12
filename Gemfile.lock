@@ -34,6 +34,9 @@ GEM
       thor (>= 0.18.1)
     lita-abuse (0.2.0)
       lita (>= 4.6)
+    lita-catme (0.1.0)
+      lita (>= 4.7)
+      nokogiri
     lita-compliment (0.2.0)
       lita (>= 4.6)
     lita-cowsay (0.2.0)
@@ -62,9 +65,12 @@ GEM
     lita-youtube-me (0.0.6)
       iso8601 (>= 0.8.6)
       lita (>= 4.0)
+    mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
     multipart-post (2.0.0)
+    nokogiri (1.6.7.2)
+      mini_portile2 (~> 2.0.0.rc2)
     puma (3.4.0)
     rack (1.6.4)
     rb-readline (0.5.3)
@@ -88,6 +94,7 @@ PLATFORMS
 DEPENDENCIES
   lita
   lita-abuse
+  lita-catme
   lita-compliment
   lita-cowsay
   lita-dice
