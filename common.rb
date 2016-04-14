@@ -3,5 +3,9 @@ class Common < Lita::Handler
     response.reply('( ͡° ͜ʖ ͡°)')
   end
 
+  route(/^montre nous tes fesses$/i, command: true) do |response|
+    response.reply('( ＾◡＾)っ (‿|‿)')
+  end
+
   Lita.register_handler(self)
 end
