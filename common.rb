@@ -11,7 +11,7 @@ class Common < Lita::Handler
     response.reply('( ＾◡＾)っ (‿|‿)')
   end
 
-  route(/^\+1( :\w+:)?( :\w+:)?$/, command: true) do |response|
+  route(/^\+1( :\w+-?\w+:)?( :\w+-?\w+:)?$/, command: true) do |response|
     args = response.args
     message = '''_0__0__0__0__0__0__0__0__0__0_
 _0__0__0__0__0__0__1__0__0__0_
@@ -31,7 +31,7 @@ _0__0__0__0__0__0__0__0__0__0_'''
     response.reply(message)
   end
 
-  route(/^-1( :\w+:)?( :\w+:)?$/, command: true) do |response|
+  route(/^-1( :\w+-?\w+:)?( :\w+-?\w+:)?$/, command: true) do |response|
     args = response.args
     message = '''_0__0__0__0__0__0__0__0__0__0_
 _0__0__0__0__0__0__1__0__0__0_
