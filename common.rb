@@ -12,29 +12,29 @@ class Common < Lita::Handler
   end
 
   route(/^uber\+1$/, command: true) do |response|
-    message = ''':inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::+1::inbefore::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::+1::+1::inbefore::inbefore::inbefore:
-:inbefore::inbefore::+1::inbefore::inbefore::inbefore::+1::inbefore::inbefore::inbefore:
-:inbefore::+1::+1::+1::inbefore::inbefore::+1::inbefore::inbefore::inbefore:
-:inbefore::inbefore::+1::inbefore::inbefore::inbefore::+1::inbefore::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::+1::inbefore::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::+1::+1::+1::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore:'''
+    message = ''':ship::ship::ship::ship::ship::ship::ship::ship::ship::ship:
+:ship::ship::ship::ship::ship::ship::+1::ship::ship::ship:
+:ship::ship::ship::ship::ship::+1::+1::ship::ship::ship:
+:ship::ship::+1::ship::ship::ship::+1::ship::ship::ship:
+:ship::+1::+1::+1::ship::ship::+1::ship::ship::ship:
+:ship::ship::+1::ship::ship::ship::+1::ship::ship::ship:
+:ship::ship::ship::ship::ship::ship::+1::ship::ship::ship:
+:ship::ship::ship::ship::ship::+1::+1::+1::ship::ship:
+:ship::ship::ship::ship::ship::ship::ship::ship::ship::ship:'''
 
     response.reply(message)
   end
 
   route(/^uber\-1$/, command: true) do |response|
-    message = ''':inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::+1::inbefore::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::+1::+1::inbefore::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::+1::inbefore::inbefore::inbefore:
-:inbefore::+1::+1::+1::inbefore::inbefore::+1::inbefore::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::+1::inbefore::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::+1::inbefore::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::+1::+1::+1::inbefore::inbefore:
-:inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore::inbefore:'''
+    message = ''':ship::ship::ship::ship::ship::ship::ship::ship::ship::ship:
+:ship::ship::ship::ship::ship::ship::-1::ship::ship::ship:
+:ship::ship::ship::ship::ship::-1::-1::ship::ship::ship:
+:ship::ship::ship::ship::ship::ship::-1::ship::ship::ship:
+:ship::-1::-1::-1::ship::ship::-1::ship::ship::ship:
+:ship::ship::ship::ship::ship::ship::-1::ship::ship::ship:
+:ship::ship::ship::ship::ship::ship::-1::ship::ship::ship:
+:ship::ship::ship::ship::ship::-1::-1::-1::ship::ship:
+:ship::ship::ship::ship::ship::ship::ship::ship::ship::ship:'''
 
     response.reply(message)
   end
