@@ -5,7 +5,6 @@ gem "lita"
 gem "lita-slack"
 
 gem "lita-google-images"
-gem "lita-karma"
 gem "lita-abuse"
 gem "lita-dice"
 gem "lita-compliment"

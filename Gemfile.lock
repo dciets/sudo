@@ -50,8 +50,6 @@ GEM
       lita (>= 4.0)
     lita-hackersays (1.0.1)
       lita (>= 4.2)
-    lita-karma (3.0.2)
-      lita (>= 4.0)
     lita-slack (1.6.0)
       eventmachine
       faraday
@@ -101,7 +99,6 @@ DEPENDENCIES
   lita-flip
   lita-google-images
   lita-hackersays
-  lita-karma
   lita-slack
   lita-timezone
   lita-youtube-me
