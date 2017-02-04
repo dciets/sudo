@@ -1,3 +1,10 @@
+GIT
+  remote: https://github.com/zacstewart/lita-flip.git
+  revision: 289bcfa870129a7cb4f6fc79effaa8123e15011c
+  specs:
+    lita-flip (1.0.2)
+      lita
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -44,8 +51,6 @@ GEM
       ruby_cowsay
     lita-dice (0.0.1)
       lita (>= 2.7)
-    lita-flip (1.0.1)
-      lita
     lita-google-images (3.1.0)
       lita (>= 4.0)
     lita-hackersays (1.0.1)
@@ -96,7 +101,7 @@ DEPENDENCIES
   lita-compliment
   lita-cowsay
   lita-dice
-  lita-flip
+  lita-flip!
   lita-google-images
   lita-hackersays
   lita-slack
