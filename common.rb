@@ -11,7 +11,8 @@ class Common < Lita::Handler
     if Time.new.to_i.even?
       response.reply('Monsieur l\'ordinateur :dorothee:')
     else
-      response.reply('Just pick up the phone :telephone_receiver:')
+      phrases = ['Just pick up the phone', 'I wonder what they wanna know', 'They wanna know, comme allo allo', 'I just wanna let you know']
+      response.reply(phrases.sample + ' :telephone_receiver:')
     end
   end
   
