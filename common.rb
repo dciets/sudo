@@ -1,4 +1,12 @@
 class Common < Lita::Handler
+  route(/^ici$/) do |response|
+    response.reply('et maintenant')
+  end
+  
+  route(/ici et maintenant/ do |response|
+    response.reply('https://www.youtube.com/watch?v=DMeyvg1M52k')
+  end
+  
   route(/^lenny$/i) do |response|
     response.reply('( ͡° ͜ʖ ͡°)')
   end
