@@ -3,7 +3,7 @@ class Common < Lita::Handler
     response.reply('et maintenant')
   end
   
-  route(/ici et maintenant/ do |response|
+  route(/ici et maintenant/) do |response|
     response.reply('https://www.youtube.com/watch?v=DMeyvg1M52k')
   end
   
