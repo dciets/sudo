@@ -8,7 +8,11 @@ class Common < Lita::Handler
   end
   
   route(/^allo allo$/i) do |response|
-    response.reply('Monsieur l\'ordinateur :dorothee:')
+    if Time.new.to_i % 2 == 0
+      response.reply('Monsieur l\'ordinateur :dorothee:')
+    else
+      response.reply('Just pick up the phone :telephone_receiver:')
+    end
   end
   
   route(/^lenny$/i) do |response|
