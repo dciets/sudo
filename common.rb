@@ -1,12 +1,31 @@
+# coding: utf-8
+
+require 'base64'
+
 class Common < Lita::Handler
+  route(/^xor ([^ ]+) ([^ ]+)/i) do |response|
+    begin
+      data = Base64.decode64(response.args[0])
+      key = Base64.decode64(response.args[1])
+
+      output = data.bytes.zip(key.bytes.cycle).map { |x|
+        x.reduce(:^).chr
+      }.join
+
+      response.reply(output.inspect)
+    rescue
+      response.reply("Usage: xor [base64 data] [base64 key]")
+    end
+  end
+
   route(/^ici$/i) do |response|
     response.reply('et maintenant')
   end
-  
+
   route(/ici et maintenant/i) do |response|
     response.reply('https://www.youtube.com/watch?v=DMeyvg1M52k')
   end
-  
+
   route(/^allo allo$/i) do |response|
     if Time.new.to_i.even?
       response.reply('Monsieur l\'ordinateur :dorothee:')
@@ -15,7 +34,7 @@ class Common < Lita::Handler
       response.reply(phrases.sample + ' :telephone_receiver:')
     end
   end
-  
+
   route(/^lenny$/i) do |response|
     response.reply('( ͡° ͜ʖ ͡°)')
   end
@@ -60,5 +79,21 @@ _0__0__0__0__0__0__0__0__0__0_'''
     response.reply(message)
   end
 
+
+  LATEX_URL = URI::HTTP.build(host: 'chart.apis.google.com', path: '/chart', fragment:'.png').freeze
+
+  route %r(\A(?:tex|latex)(?:\s+me)?\s+(.*)\Z), :latex, command: true do
+    expression = CGI.escape(response.matches.first.first)
+    response.reply image_url(expression)
+  end
+
   Lita.register_handler(self)
+
+  private
+
+  def image_url(expression)
+    LATEX_URL.dup.tap { |url|
+      url.query = "cht=tx&chl=#{ expression }"
+    }.to_s
+  end
 end
