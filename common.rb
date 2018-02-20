@@ -87,6 +87,11 @@ _0__0__0__0__0__0__0__0__0__0_'''
     response.reply image_url(expression)
   end
 
+  route(/^countdown/i, command: true) do |response|
+    count = (Date.new(2018, 03, 23) - Date.today).to_i
+    response.reply ":cs-games: *#{count} jours* avant les CS Games :cs-games:"
+  end
+
   Lita.register_handler(self)
 
   private
