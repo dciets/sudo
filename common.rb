@@ -52,6 +52,10 @@ class Common < Lita::Handler
     response.reply('( ＾◡＾)っ (‿|‿)')
   end
 
+  route(/^koi$/i, command: true) do |response|
+    response.reply("Je revenais de faire mon voyage de coopération internationale au Sénégal et les filles du groupe me l'on créé ... Confit pour confiture, parce que se salué dans le dialecte cerrer-lala tu dit \"jammm\" comme confiture en anglais et le phil c'était parce que mon nom d'adoption au Sénégal c'était Philippe")
+  end
+
   route(/^\+1( :[\w\-\+:]+:)?( :[\w\-\+:]+:)?$/, command: true) do |response|
     message = '''_0__0__0__0__0__0__0__0__0__0_
 _0__0__0__0__0__0__1__0__0__0_
