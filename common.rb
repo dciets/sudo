@@ -102,7 +102,15 @@ _0__0__0__0__0__0__0__0__0__0_'''
 
   route(/countdown/i, command: false) do |response|
     count = (Date.new(2019, 03, 22) - Date.today).to_i
-    response.reply ":cs-games: *#{count} jours* avant les CS Games :cs-games:"
+    if count > 1
+      response.reply ":cs-games: *#{count} jours* avant les CS Games :cs-games:"
+    elsif count == 1
+      response.reply ":cs-games: :hypnotroll: :pogslide: C'EST DEMAIN! :pogslide: :hypnotroll: :cs-games:"
+    elsif count == 0
+      response.reply ":cs-games: :hypnotroll: :pogslide: C'EST AUJOURD'HUI! :pogslide: :hypnotroll: :cs-games:"
+    else
+      response.reply ":cs-games: Les CS reviennent l'année prochaine! :cs-games:"
+    end
   end
 
   Lita.register_handler(self)
