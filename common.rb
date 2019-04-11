@@ -60,6 +60,10 @@ class Common < Lita::Handler
     response.reply("koi")
   end
 
+  route(/^:arrow_up: :arrow_up: :arrow_down: :arrow_down: :arrow_left: :arrow_right: :arrow_left: :arrow_right: :b: :a:$/i) do |response|
+    response.reply(":fireworks: Thanks, this Slack workspace has been upgraded to a PREMIUM workspace :fireworks:")
+  end
+
   route(/^\+1( :[\w\-\+:]+:)?( :[\w\-\+:]+:)?$/, command: true) do |response|
     message = '''_0__0__0__0__0__0__0__0__0__0_
 _0__0__0__0__0__0__1__0__0__0_
