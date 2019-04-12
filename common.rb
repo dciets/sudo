@@ -40,7 +40,7 @@ class Common < Lita::Handler
   end
 
   route(/^lennyorgy$/i) do |response|
-    response.reply('( ͡°( ͡° ͜ʖ( ͡° ͜ʖ ͡°)ʖ ͡°) ͡°)')
+    response.reply(':lenny1::lenny1::lenny1::lenny2::lenny2::lenny2:')
   end
 
   route(/^8ball/i, command: true) do |response|
