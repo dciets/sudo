@@ -36,7 +36,7 @@ class Common < Lita::Handler
   end
 
   route(/^lenny$/i) do |response|
-    response.reply('( ͡° ͜ʖ ͡°)')
+    response.reply(':lenny1::lenny2:')
   end
 
   route(/^lennyorgy$/i) do |response|
