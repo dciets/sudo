@@ -1,6 +1,7 @@
 # coding: utf-8
 
 require 'base64'
+require 'net/http'
 
 class Common < Lita::Handler
   route(/^xor ([^ ]+) ([^ ]+)/i) do |response|
@@ -117,6 +118,11 @@ _0__0__0__0__0__0__0__0__0__0_'''
     end
   end
 
+  route(/^kebac (.+)$/i, command: true) do |response|
+    expression = response.args[0]
+    response.reply fetch_kebac(expression)
+  end
+
   Lita.register_handler(self)
 
   private
@@ -126,4 +132,18 @@ _0__0__0__0__0__0__0__0__0__0_'''
       url.query = "cht=tx&chl=#{ expression }"
     }.to_s
   end
+
+  def fetch_kebac(expression)
+    uri = URI('https://agile-scrubland-53958.herokuapp.com')
+    uri.query = URI.encode_www_form({ :french => expression })
+    response = Net::HTTP.get_response(uri)
+  
+    case response
+    when Net::HTTPSuccess then
+      response.body
+    else
+      'leu sairver neu répon pa ¯\_(ツ)_/¯'
+    end
+  end
+
 end
