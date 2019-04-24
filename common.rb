@@ -120,7 +120,7 @@ _0__0__0__0__0__0__0__0__0__0_'''
 
   route(/^kebac (.+)$/i, command: true) do |response|
     expression = response.args[0]
-    response.reply fetch_kebac(expression)
+    response.reply expression
   end
 
   Lita.register_handler(self)
