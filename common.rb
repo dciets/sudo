@@ -119,8 +119,8 @@ _0__0__0__0__0__0__0__0__0__0_'''
   end
 
   route(/^kebac (.+)$/i, command: true) do |response|
-    expression = response
-    response.reply expression
+    expression = response.args.join(' ')
+    response.reply fetch_kebac(expression)
   end
 
   Lita.register_handler(self)
