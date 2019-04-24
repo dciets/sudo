@@ -119,7 +119,7 @@ _0__0__0__0__0__0__0__0__0__0_'''
   end
 
   route(/^kebac (.+)$/i, command: true) do |response|
-    expression = response.args[0]
+    expression = response
     response.reply expression
   end
 
