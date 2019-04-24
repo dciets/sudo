@@ -123,6 +123,11 @@ _0__0__0__0__0__0__0__0__0__0_'''
     response.reply fetch_kebac(expression)
   end
 
+  route(/^mariechantal (.+)$/i, command: true) do |response|
+    expression = response.args.join(' ')
+    response.reply fetch_kebac(expression.upcase)
+  end
+
   Lita.register_handler(self)
 
   private
@@ -137,7 +142,7 @@ _0__0__0__0__0__0__0__0__0__0_'''
     uri = URI('https://agile-scrubland-53958.herokuapp.com')
     uri.query = URI.encode_www_form({ :french => expression })
     response = Net::HTTP.get_response(uri)
-  
+
     case response
     when Net::HTTPSuccess then
       response.body
