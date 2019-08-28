@@ -106,7 +106,7 @@ _0__0__0__0__0__0__0__0__0__0_'''
   end
 
   route(/countdown/i, command: false) do |response|
-    count = (Date.new(2019, 03, 22) - Date.today).to_i
+    count = (Date.new(2019, 03, 13) - Date.today).to_i
     if count > 1
       response.reply ":cs-games: *#{count} jours* avant les CS Games :cs-games:"
     elsif count == 1
