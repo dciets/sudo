@@ -109,13 +109,14 @@ _0__0__0__0__0__0__0__0__0__0_'''
     count = (Date.new(2020, 03, 13) - Date.today).to_i
     count_launch_party = (Date.new(2019, 11, 8) - Date.today).to_i
     if count > 1
-      output ":cs-games: *#{count} jours* avant les CS Games :cs-games:"
+      output = ":cs-games: *#{count} jours* avant les CS Games :cs-games:"
       if count_launch_party > 1
         output += " et le launch party est dans *#{count_launch_party} jours*!"
       elsif count_launch_party == 1
         output += " :hypnotroll: :pogslide: MAIS LE LAUNCH PARTY C'EST DEMAIN! :pogslide: :hypnotroll:"
       elsif count_launch_party == 0
         output += " :hypnotroll: :pogslide: MAIS LE LAUNCH PARTY C'EST AUJOURD'HUI! :pogslide: :hypnotroll:"
+      end
       response.reply output
     elsif count == 1
       response.reply ":cs-games: :hypnotroll: :pogslide: C'EST DEMAIN! :pogslide: :hypnotroll: :cs-games:"
