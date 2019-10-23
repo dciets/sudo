@@ -110,7 +110,9 @@ _0__0__0__0__0__0__0__0__0__0_'''
     count_launch_party = (Date.new(2019, 11, 8) - Date.today).to_i
     if count > 1
       output = ":cs-games: *#{count} jours* avant les CS Games :cs-games:"
-      if count_launch_party > 1
+      if count_launch_party == 14
+        output += " et le launch party est dans un :pogslide: fortnight :pogslide: !"
+      elsif count_launch_party > 1
         output += " et le launch party est dans *#{count_launch_party} jours*!"
       elsif count_launch_party == 1
         output += " :hypnotroll: :pogslide: MAIS LE LAUNCH PARTY C'EST DEMAIN! :pogslide: :hypnotroll:"
