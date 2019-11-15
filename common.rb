@@ -129,6 +129,10 @@ _0__0__0__0__0__0__0__0__0__0_'''
     end
   end
 
+  route(/qualif/i, command: false) do |response|
+    response.reply "Les qualifs sont le 25 janvier. Parles-en à tes ami-es :slightly_smiling_face:"
+  end
+
   route(/^kebac (.+)$/i, command: true) do |response|
     expression = response.args.join(' ')
     response.reply fetch_kebac(expression)
