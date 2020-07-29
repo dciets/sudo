@@ -1,8 +1,8 @@
 # Configurer sudo
-Il y a des variables d'environnement à configurer pour faire fonctionner `sudo`.
+Il y a des variables d'environnement à configurer pour faire fonctionner sudo.
 
 ## 1. Créer env.sh
-Les variables d'environnement sont passées à `sudo` avec le fichier `env.sh`.
+Les variables d'environnement sont passées à sudo avec le fichier `env.sh`.
 
 > **Ces variables sont sensibles, donc il ne faut absolument pas les commit dans le repo.**
 > **Gardez toujours env.sh dans le `.gitignore`!**
@@ -44,3 +44,36 @@ Si jamais vous avez besoin de créer un nouveau projet Google pour sudo:
 
 # Rouler sudo avec Docker et Docker Compose
 Une fois sudo configuré, vous pouvez simplement faire `compose up -d` à la racine du repo et ça devrait marcher!
+
+# Rouler sudo au démarrage
+Pour rouler sudo au démarrage, créez un service systemd en créant le fichier `/etc/systemd/system/sudo.service`:
+
+```
+[Unit]
+Description=Docker Compose service for sudo bot
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=<sudo project directory>
+ExecStart=/usr/local/bin/docker-compose up -d
+ExecStop=/usr/local/bin/docker-compose down
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Remplacez `<sudo project directory>` par le chemin du dossier de sudo.
+
+Pour rouler le service au démarrage:
+```
+sudo systemctl enable sudo
+```
+
+Pour rouler le service sans redémarrer le serveur:
+```
+sudo systemctl start sudo
+```
