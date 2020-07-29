@@ -135,12 +135,12 @@ _0__0__0__0__0__0__0__0__0__0_'''
 
   route(/^kebac (.+)$/i, command: true) do |response|
     expression = response.args.join(' ')
-    response.reply fetch_kebac(expression)
+    response.reply fetch_kebac(expression).force_encoding(Encoding::UTF_8)
   end
 
   route(/^mariechantal (.+)$/i, command: true) do |response|
     expression = response.args.join(' ')
-    response.reply fetch_kebac(expression).upcase
+    response.reply fetch_kebac(expression).force_encoding(Encoding::UTF_8).upcase
   end
 
   Lita.register_handler(self)
